@@ -2,6 +2,9 @@
 
 const express = require('express');
 const app = express();
+
+const routes = require('./routes');
+
 const jsonParser = require("body-parser").json;
 
 
@@ -16,6 +19,7 @@ var jasonCheck = (req, res, next)=>{
 
 
 app.use(jsonParser());
+app.use("/questions", routes);
 
 // app.use((req, res, next)=>{
 //     console.log("First Piece of middleware");
